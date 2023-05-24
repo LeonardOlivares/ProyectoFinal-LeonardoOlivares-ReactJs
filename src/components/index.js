@@ -1,0 +1,5 @@
+export { NavBarPrincipal } from './layout/navBar/navbar'
+export { Tienda } from './pages/tienda/tienda'
+export { Nosotros } from './pages/nosotros/nosotros'
+export { Home } from './pages/home/home'
+export { Contacto } from './pages/contacto/contacto'
