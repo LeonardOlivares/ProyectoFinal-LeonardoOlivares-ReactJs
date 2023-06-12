@@ -1,0 +1,6 @@
+.listCard {
+    display: flex !important;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 50px auto;
+  }

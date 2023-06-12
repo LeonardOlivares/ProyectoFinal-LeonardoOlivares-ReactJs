@@ -1,0 +1,27 @@
+.cardItem {
+    border: 1px #ba2c2c;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 300px;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    margin: 5px;
+  }
+  .cardItem:hover{
+    -webkit-box-shadow: 2px 4px 18px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 4px 18px -7px rgba(0,0,0,0.75);
+    box-shadow: 2px 4px 18px -7px rgba(0,0,0,0.75);
+    -webkit-transition: box-shadow 0.3s ease-in-out 0s;
+    -moz-transition: box-shadow 0.3s ease-in-out 0s;
+    -o-transition: box-shadow 0.3s ease-in-out 0s;
+    -ms-transition: box-shadow 0.3s ease-in-out 0s;
+    transition: box-shadow 0.3s ease-in-out 0s;
+  }
+  .itemImg {
+    width: 286px !important;
+    height: 180px !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+  }

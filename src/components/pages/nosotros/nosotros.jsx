@@ -1,3 +1,6 @@
+import React from "react"
+
+
 const Nosotros = () => {
 
     return (
@@ -6,5 +9,4 @@ const Nosotros = () => {
             </div>
         )
 }
-
 export { Nosotros }

@@ -1,0 +1,11 @@
+.counter {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: center;
+    
+    
+}
+.btn-count{
+    margin: 10px;
+}

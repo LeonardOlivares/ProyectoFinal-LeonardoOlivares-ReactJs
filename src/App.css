@@ -1,9 +1,7 @@
 section{
- color: #fff;
- text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
- background-color:dimgray ;
- height: 100vh;  
-}
-.NavBg{
-    background-color:rgb(208, 175, 10) !important;
+ color: #2f2f2f;
+ background-color:rgb(255, 255, 255) ;
+ justify-content: center;
+ align-items: center;
+ text-align: center; 
 }
