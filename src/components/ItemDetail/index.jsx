@@ -1,37 +1,54 @@
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import './itemDetail.css'
-import { useParams } from "react-router-dom";
-import { getProductById } from "../data/data";
 import { ItemCount } from "../ItemCount";
 
-const ItemDetail = () =>{
+const ItemDetail = ({item}) =>{
     
     const onAdd = (quantity) => {
         alert(`Compraste ${quantity} unidades`)
     }
-
-    /* const { id } = useParams();
+/* 
+    const { id } = useParams();
     
     const [ product, setProduct] = useState({})
     
     useEffect(() => {
-        getProductById(id).then((product) => {
-            setProduct(product);
-        })       
+        getItem(id).then((product) => {
+            setProduct({product});
+        })      
     }, [id]) */
     
     
     
     return (
         <>
-        <h1>Detalle de { product.nombre } </h1>
-        <p>Categoria: {product.categoria}</p>
-        <img src={product.img} alt={product.nombre} />
-        <h3>Precio: ${product.precio}</h3>
-        <p>Stock disponible: {product.stock} unidades</p>
-        <div className="contadorDetail"><ItemCount initial={1} stock={product.stock} onAdd={onAdd}/></div>
+        <div className="detailer">
+        <div className="ladoA">
+        <img src={item.img} alt={item.nombre}className="imgDetail"/>
+        </div>
+        <div className="ladoB">
+        <h1 className="titleDetail">{item.nombre} </h1>
+        <p>Categoria: {item.categoria}</p>
+        <p>Descrición:{item.descripcion} </p>
+        <h3>Precio: ${item.precio}</h3>
+        <p>Stock disponible: {item.stock} unidades</p>
+        <div>{/* {cantidadAgregada > 0 ?( 
+            <div>
+                <Link to='/cart' className='btn btn-primary'>Ir a Pagar</Link>
+                <Link to='/' className='btn btn-warning'>Volver al Catálogo</Link>
+            </div>)
+            : */}
+            <div className="contadorDetail"><ItemCount initial={1} stock={item.stock} onAdd={onAdd}/></div></div>
+        
+        </div>
+        </div>
         </>
+
+
+
+
+
     )
 
 
@@ -55,30 +72,41 @@ const ItemDetail = ({id,precio,stock,nombre,img,categoria,descripcion} ) =>{
     const[cantidadAgregada, setCantidadAgregada] = useState(0)
     const {addItem} = useContext(CartContext)
     const [ isCartClicked, setIsCartClicked] = useState(false)
-
-
+    
+    
     const onAdd = (quantity) => {
         setCantidadAgregada(quantity) 
         alert(`Compraste ${quantity} unidades`)
-
+        
         const item ={id,nombre,precio,stock,img}
         addItem(item,quantity)
         setIsCartClicked(true)
     }
-
+    
     const { id } = useParams();
-
+    
     const [ product, setProduct] = useState({})
-
+    
     useEffect(() => {
         getProductById(id).then((product) => {
             setProduct(product);
         })       
     }, [id])
-
-
-
+    
+    
+    
     return (
+        1111
+                <>
+                <h1>Detalle de { product.nombre } </h1>
+                <p>Categoria: {product.categoria}</p>
+                <img src={product.img} alt={product.nombre} />
+                <h3>Precio: ${product.precio}</h3>
+                <p>Stock disponible: {product.stock} unidades</p>
+                <div className="contadorDetail"><ItemCount initial={1} stock={product.stock} onAdd={onAdd}/></div>
+                </>
+
+    22222
         <>
         <div className="detailer">
         <div className="ladoA">

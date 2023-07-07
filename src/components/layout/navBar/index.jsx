@@ -13,11 +13,11 @@ const NavBarPrincipal = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <NavLink as={Link} to="/categoria/bicicletas">Bicicletas</NavLink>
-            <NavLink as={Link} to="/categoria/indumentaria">Indumentaria</NavLink>
-            <NavLink as={Link} to="/categoria/accesorios">Accesorios</NavLink>
-            <NavLink as={Link} to="/categoria/seguridad">Seguridad</NavLink>
-            <NavLink as={Link} to="/categoria/e-move">E-Move</NavLink>
+            <NavLink as={Link} to="categoria/bicicletas">Bicicletas</NavLink>
+            <NavLink as={Link} to="categoria/indumentaria">Indumentaria</NavLink>
+            <NavLink as={Link} to="categoria/accesorios">Accesorios</NavLink>
+            <NavLink as={Link} to="categoria/seguridad">Seguridad</NavLink>
+            <NavLink as={Link} to="categoria/e-move">E-Move</NavLink>
           </Nav>
           <Nav>
             <NavLink as={Link} to="/cart">  <CartWidget/> </NavLink>
