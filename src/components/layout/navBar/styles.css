@@ -1,4 +1,7 @@
 .NavBg{
-    background-color:rgb(18, 56, 144) !important;
+    background-color:rgb(98, 7, 24) !important;
     color: white !important;
+}
+.logoNav{
+    height: 100px;
 }

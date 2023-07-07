@@ -1,14 +1,14 @@
 import products from "./json/data.json"
 
 
-export const getProducts = ()=>{
+/* export const getProducts = ()=>{
     return new Promise((resolve) => {
         setTimeout(()=>{
             resolve(products);
         }, 2000)
     })
     
-}
+} */
 
 export const getProductById = (id) => {
     return new Promise((resolve) => {

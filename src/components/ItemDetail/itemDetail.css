@@ -1,5 +1,25 @@
 .contadorDetail{
+    text-align: center;
     align-items: center;
     justify-content: center;
     justify-items: center;
+}
+.detailer{
+    background-color: white;
+    display: flex;
+    margin: 30px;
+    padding: 10px;
+}
+.imgDetail{
+    height: auto;
+    width: 600px;
+}
+.ladoB{
+    text-align: left;
+
+}
+.titleDetail{
+    color: rgb(138, 20, 42);
+    font-weight:700;
+    font-size: 35px;
 }

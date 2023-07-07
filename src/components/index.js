@@ -1,9 +1,10 @@
+export { CartWidget } from './CartWidget'
 export { NavBarPrincipal } from './layout/navBar'
 export { Tienda } from './pages/tienda/tienda'
-export { Nosotros } from './pages/nosotros/nosotros'
-export { Home } from './pages/home/home'
-export { Contacto } from './pages/contacto/contacto'
 export { ItemListContainer } from './itemListContainer'
 export { Item } from './Item'
 export { ItemList } from './ItemList'
 export { ItemCount } from './ItemCount'
+export { CartProvider } from './context/Cart'
+export { Cart } from './Cart'
+

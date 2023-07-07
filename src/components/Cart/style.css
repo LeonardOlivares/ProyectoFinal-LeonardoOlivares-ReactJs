@@ -1,0 +1,7 @@
+.btn-cart {
+    background-color:rgb(218, 12, 50) !important ;
+    color: white !important;
+}
+.btn-cart:hover{
+    background-color:rgb(232, 47, 81) !important ;
+}

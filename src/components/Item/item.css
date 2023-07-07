@@ -7,6 +7,7 @@
     align-items: center;
     border-radius: 30px;
     margin: 5px;
+    padding: 5px;
   }
   .cardItem:hover{
     -webkit-box-shadow: 2px 4px 18px -7px rgba(0,0,0,0.75);
@@ -19,9 +20,6 @@
     transition: box-shadow 0.3s ease-in-out 0s;
   }
   .itemImg {
-    width: 286px !important;
+    width: auto !important;
     height: 180px !important;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover !important;
   }

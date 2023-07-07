@@ -1,11 +1,18 @@
 .counter {
+    background-color: white;
     width: fit-content;
     margin: 0 auto;
     padding: 2px;
     text-align: center;
-    
+    vertical-align: center;
+    display: flex;
     
 }
 .btn-count{
     margin: 10px;
+}
+.Ncantidad{
+    position: relative;
+    margin-top: 1rem;
+    
 }
