@@ -1,24 +1,20 @@
 
-import React from "react";
+import React, { useState, useContext } from "react";
 import './itemDetail.css'
 import { ItemCount } from "../ItemCount";
+import { Link } from "react-router-dom";
+import { CartContext } from "../context/Cart"
 
 const ItemDetail = ({item}) =>{
+
+    const[goToCart, setGoToCart] = useState (false)
+    const {addProduct} = useContext(CartContext)
     
     const onAdd = (quantity) => {
+        setGoToCart(true)
+        addProduct(item,quantity)
         alert(`Compraste ${quantity} unidades`)
     }
-/* 
-    const { id } = useParams();
-    
-    const [ product, setProduct] = useState({})
-    
-    useEffect(() => {
-        getItem(id).then((product) => {
-            setProduct({product});
-        })      
-    }, [id]) */
-    
     
     
     return (
@@ -33,13 +29,16 @@ const ItemDetail = ({item}) =>{
         <p>Descrición:{item.descripcion} </p>
         <h3>Precio: ${item.precio}</h3>
         <p>Stock disponible: {item.stock} unidades</p>
-        <div>{/* {cantidadAgregada > 0 ?( 
+        <div> { goToCart > 0 ?
+        ( 
             <div>
                 <Link to='/cart' className='btn btn-primary'>Ir a Pagar</Link>
                 <Link to='/' className='btn btn-warning'>Volver al Catálogo</Link>
             </div>)
-            : */}
-            <div className="contadorDetail"><ItemCount initial={1} stock={item.stock} onAdd={onAdd}/></div></div>
+            :
+            <div className="contadorDetail"><ItemCount initial={1} stock={item.stock} onAdd={onAdd}/></div>
+        }
+        </div>
         
         </div>
         </div>
@@ -50,9 +49,10 @@ const ItemDetail = ({item}) =>{
 
 
     )
-
-
 }
+
+
+
 export { ItemDetail }
 
 

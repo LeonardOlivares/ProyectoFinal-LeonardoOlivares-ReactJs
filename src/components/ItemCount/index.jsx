@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect  } from "react"
 import './itemCount.css'
 import React from "react"
 import { Button } from "react-bootstrap"
 
 const ItemCount =({initial, stock, onAdd}) => {
+    
+
     const [count, setCount] = useState(initial)
 
     const decrementQuantity = () => {
