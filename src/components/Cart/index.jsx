@@ -73,7 +73,7 @@ const Cart = () => {
               </div>
             ))}
             <div className="d-flex m-4 justify-content-center">
-              <span className="totalCarrito border border-secondary">Total: {formateo(totalCarrito)}</span>              
+              <span className="totalCarrito border border-secondary">Total: {formateo(totalCarrito())}</span>              
               <button className="btn btn-success" onClick={() => Navigate('/checkout')}>Finalizar Compra</button>
             </div>
             <div className="d-flex m-5 justify-content-center">              

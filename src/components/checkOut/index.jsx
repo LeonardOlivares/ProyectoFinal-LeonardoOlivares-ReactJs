@@ -1,12 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext,  useState} from "react";
 import { CartContext } from "../context";
 import { useForm } from "react-hook-form";
+import { collection, addDoc, getFirestore } from 'firebase/firestore'
 
 
 const Checkout = () => {
 
+    const [pedidoId, setpedidoId] = useState("")
     const { cartProducts, limpiarCarrito, totalCarrito } = useContext(CartContext)
     const { register, handleSubmit } = useForm()
+    const db = getFirestore()
 
     const comprar = (data) => {
         const pedido = {
@@ -15,6 +18,23 @@ const Checkout = () => {
             total: totalCarrito()
         }
         console.log(pedido)
+
+
+        const pedidosRef = collection(db, "orders")
+        addDoc(pedidosRef, pedido)
+        .then((doc) => { 
+            setpedidoId(doc.id)
+            limpiarCarrito()
+
+        })
+    }
+    if (pedidoId){
+        return (
+            <div className="container">
+                <h1 className='d-flex display-5 pt-3 '>Muchas gracias por tu compra</h1>
+                <p>Tu numero de pedido es: {pedidoId}</p>
+            </div>
+        )
     }
 
 
