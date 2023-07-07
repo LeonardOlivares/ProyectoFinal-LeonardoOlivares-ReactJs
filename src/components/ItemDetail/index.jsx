@@ -4,6 +4,7 @@ import './itemDetail.css'
 import { ItemCount } from "../ItemCount";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/Cart"
+import { LoadingSpinner } from "../loadingSpinner";
 
 const ItemDetail = ({item}) =>{
 
@@ -25,7 +26,8 @@ const ItemDetail = ({item}) =>{
         <>
         <div className="detailer">
         <div className="ladoA">
-        <img src={item.img} alt={item.nombre}className="imgDetail"/>
+        {item.img ?  <img src={item.img} alt={item.nombre}className="imgDetail"/> : <LoadingSpinner text={"Cargando Producto..."} />}
+       
         </div>
         <div className="ladoB">
         <h1 className="titleDetail">{item.nombre} </h1>

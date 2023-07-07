@@ -5,9 +5,9 @@ const LoadingSpinner = ({text}) => {
   return (
     <div className="d-flex align-items-center justify-content-center" >
         {text}
-      <Spinner animation="border" variant="primary" />
+      <Spinner className="m-5" animation="border" variant="primary" />
     </div>
   );
 };
 
-export default LoadingSpinner;
+export { LoadingSpinner} 

@@ -24,10 +24,19 @@ const CartProvider = ({children}) => {
 
       const removeProduct = (id) =>
       setCartProducts(cartProducts.filter(product => product.id !== id))
-      
 
+      const formateo = (precio) => {
+        return new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(precio);
+      }
+      const totalCarrito = () =>{
+        return cartProducts.reduce((acc, item) => acc + (item.precio * item.quantity), 0)}
+        /* const totalCarrito = () => {
+            return new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' })
+            .format(cartProducts.reduce((acc, item) => acc + (item.precio * item.quantity), 0))} */
     return (
         <CartContext.Provider value={{
+            formateo,
+            totalCarrito,
             cartProducts,
             limpiarCarrito,
             isInCart,

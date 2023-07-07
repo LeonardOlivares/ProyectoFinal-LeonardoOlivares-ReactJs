@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { ItemList } from "../ItemList"
 import { useParams } from "react-router-dom";
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
+import { LoadingSpinner } from "../loadingSpinner";
 
 
 
@@ -28,7 +29,11 @@ const ItemListContainer = ({ greeting }) => {
     return (
         <>        
             <h1> { greeting }</h1>
-            <ItemList items={products} />
+            {products.length > 0 ? (
+            <ItemList items={products} />)
+            :
+            (<LoadingSpinner text={"Cargando tienda..."}/>)
+        }
         </>
 )
 }
