@@ -6,7 +6,7 @@ const ItemList = ({items}) => {
     return (
         <div className="listCard">
             {items.map((item) =>{
-                 <Item key={item.id} {...item} textButton="Ver detalles"/>}
+                return( <Item key={item.id} {...item} textButton="Ver detalles"/>)}
                  )}
         </div>
         

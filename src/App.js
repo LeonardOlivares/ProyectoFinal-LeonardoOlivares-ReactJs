@@ -32,7 +32,7 @@ function App() {
         <Routes>
           <Route path='' element={ <NavBarPrincipal /> }>
            <Route path='/' element={ <Tienda /> } />
-           <Route path='/tienda/:id' element={ <ItemDetailContainer /> } />
+           <Route path='/:id' element={ <ItemDetailContainer /> } />
            <Route path='/categoria' element={ <ItemListContainer /> } />
            <Route path='/categoria/:category' element={ <ItemListContainer /> } />
            <Route path='/cart' element={ <Cart/> } />

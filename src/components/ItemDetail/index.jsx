@@ -11,7 +11,7 @@ const ItemDetail = () =>{
         alert(`Compraste ${quantity} unidades`)
     }
 
-    const { id } = useParams();
+    /* const { id } = useParams();
     
     const [ product, setProduct] = useState({})
     
@@ -19,7 +19,7 @@ const ItemDetail = () =>{
         getProductById(id).then((product) => {
             setProduct(product);
         })       
-    }, [id])
+    }, [id]) */
     
     
     

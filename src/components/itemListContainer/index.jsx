@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { ItemList } from "../ItemList"
 import { useParams } from "react-router-dom";
 /* import { getItems } from '../services' */
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { getItems } from "../../services/items";
 
 
 const ItemListContainer = ({ greeting }) => {
@@ -11,13 +11,20 @@ const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
+      getItems().then((data) => {
+        setProducts(data)
+      })     
+    }, [])
+    
+
+   /*  useEffect(() => {
         const db = getFirestore()
 
         const itemsRef = collection(db, "items")
         getDocs(itemsRef).then((snapshot) => {
             setProducts(snapshot.docs.map((doc) =>({ id: doc.id, ...doc.data() })))
         })
-    }, [])
+    }, []) */
 
     
 
