@@ -1,23 +1,23 @@
 import React, { useContext } from 'react';
-import { CartContext } from '../context/Cart';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import 'bootstrap/dist/css/bootstrap.css';
 import './style.css'
+import { CartContext } from '../context';
 
 
 
+const { cartProducts, limpiarCarrito, removeItem } = useContext(CartContext);
 const Cart = () => {
-  const { cart, clearCart, removeItem } = useContext(CartContext);
 
   const formateo = (precio) => {
     return new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(precio);
   };
 
-  const total = cart.reduce((acc, item) => acc + (item.precio * item.quantity), 0);
+  const total = cartProducts.reduce((acc, item) => acc + (item.precio * item.quantity), 0);
 
   const handleClearCart = () => {
-    clearCart();
+    limpiarCarrito();
   };
 
   const handleRemoveItem = (itemId) => {

@@ -1,11 +1,46 @@
-import { createContext, useContext, useState  } from 'react'
+import { createContext, useState  } from 'react'
 
 const CartContext = createContext()
-export const useCartContext = ()=> useContext(CartContext)
 const CartProvider = ({children}) => {
+ 
+    const [cartProducts, setCartProducts] = useState([])
     
-    
-    /*  useEffect(() =>{
+    const addProduct = (item, quantity) =>{
+      if (isInCart(item.id)){
+          setCartProducts(cartProducts.map(product =>{
+              return product.id === item.id ? {...product, quantity: product.quantity + quantity} : product
+          }))            
+      } else {
+          setCartProducts([...cartProducts, {...item,quantity}])
+      }
+    }
+    const limpiarCarrito = () => {
+        setCartProducts([]);
+      };
+      
+      const isInCart = (id) => {
+        return cartProducts.find(product => product.id === id) ? true : false;
+      }
+
+      const removeProduct = (id) =>
+      setCartProducts(cartProducts.filter(product => product.id !== id))
+      
+
+    return (
+        <CartContext.Provider value={{
+            cartProducts,
+            limpiarCarrito,
+            isInCart,
+            removeProduct,
+            addProduct}}>
+            {children}
+        </CartContext.Provider>
+    )
+}
+
+export { CartProvider, CartContext }
+
+  /*  useEffect(() =>{
         if (cart.length !== 0){
             localStorage.setItem('cart', JSON.stringify(cart))
         }
@@ -76,40 +111,3 @@ const CartProvider = ({children}) => {
         });
         setCartProducts(newArray);
     }; */
-    
-    const [cartProducts, setCartProducts] = useState([])
-    
-    const addProduct = (item, quantity) =>{
-      if (isInCart(item.id)){
-          setCartProducts(cartProducts.map(product =>{
-              return product.id === item.id ? {...product, quantity: product.quantity + quantity} : product
-          }))            
-      } else {
-          setCartProducts([...cartProducts, {...item,quantity}])
-      }
-    }
-    const limpiarCarrito = () => {
-        setCartProducts([]);
-      };
-      
-      const isInCart = (id) => {
-        return cartProducts.find(product => product.id === id) ? true : false;
-      }
-
-      const removeProduct = (id) =>
-      setCartProducts(cartProducts.filter(product => product.id !== id))
-      
-
-    return (
-        <CartContext.Provider value={{
-            cartProducts,
-            limpiarCarrito,
-            isInCart,
-            removeProduct,
-            addProduct}}>
-            {children}
-        </CartContext.Provider>
-    )
-}
-
-export { CartProvider, CartContext }

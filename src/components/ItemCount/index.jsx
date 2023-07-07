@@ -7,6 +7,7 @@ const ItemCount =({initial, stock, onAdd}) => {
     
 
     const [count, setCount] = useState(initial)
+    const { addProduct } = useContext(CartContext)
 
     const decrementQuantity = () => {
         setCount(count - 1)
