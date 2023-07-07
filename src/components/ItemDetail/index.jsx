@@ -5,21 +5,19 @@ import { ItemCount } from "../ItemCount";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/Cart"
 
-const ItemDetail = ({id,nombre, img, categoria,descripcion,precio,stock}) =>{
+const ItemDetail = ({item}) =>{
 
     const[goToCart, setGoToCart] = useState (0)
-    const {addProduct} = useContext(CartContext)
-    const [isCartClicked, setIsCartClicked] = useState(false)
+    const {addProduct, cartProducts} = useContext(CartContext)
     
     
     const handleOnAdd = (quantity)=>{
         setGoToCart(quantity)
-        const item ={
-            id,nombre, img, categoria,descripcion,precio,stock}
         
         addProduct(item,quantity)
-        setIsCartClicked(true)        
+        
         alert(`Compraste ${quantity} unidades`)
+        console.log([cartProducts])
         }
     
     
@@ -38,8 +36,8 @@ const ItemDetail = ({id,nombre, img, categoria,descripcion,precio,stock}) =>{
         <div> { goToCart > 0 ?
         ( 
             <div>
-                <Link to='/cart' className='btn btn-primary'>Ir a Pagar</Link>
-                <Link to='/' className='btn btn-warning'>Volver al Catálogo</Link>
+                <Link to='/' className='m-3 btn btn-outline-primary'>Volver al Catálogo</Link>
+                <Link to='/cart' className='m-3 btn btn-success'>Ir a Pagar</Link>
             </div>)
             :
             <div className="contadorDetail"><ItemCount initial={1} stock={item.stock} onAdd={handleOnAdd}/></div>

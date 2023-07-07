@@ -11,7 +11,7 @@ const CartWidget = () =>{
     <Link to='/cart'>
         <div className="cart-widget">
            <i className="bi bi-cart-fill" ></i>
-           <span className="badge text-white">{cartProducts.lenght} Productos</span>
+           <span className="badge text-white">{cartProducts.length}</span>
        </div>
     </Link>
     )
