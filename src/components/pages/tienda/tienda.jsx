@@ -7,9 +7,9 @@ import { ItemListContainer } from "../../itemListContainer"
 const Tienda = () => {
 
     return (
-            <div>
-                <ItemListContainer greeting={"Bienvenido a VeloPro"}/>
-            </div>
-        )
+        <div>
+            <ItemListContainer greeting={"Bienvenido a VeloPro"} />
+        </div>
+    )
 }
 export { Tienda }

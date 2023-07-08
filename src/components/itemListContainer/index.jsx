@@ -7,35 +7,35 @@ import { LoadingSpinner } from "../loadingSpinner";
 
 
 const ItemListContainer = ({ greeting }) => {
-     
+
     const [products, setProducts] = useState([])
-    const {categoryId}  = useParams()
-    
-    useEffect(() =>{
+    const { categoryId } = useParams()
+
+    useEffect(() => {
         const db = getFirestore()
         const queryCollection = collection(db, "items")
-        if(categoryId){
+        if (categoryId) {
             const queryFilter = query(queryCollection, where("categoria", "==", categoryId))
-            getDocs(queryFilter).then(res => setProducts(res.docs.map(item => ({id: item.id, ...item.data()}))))
+            getDocs(queryFilter).then(res => setProducts(res.docs.map(item => ({ id: item.id, ...item.data() }))))
         } else {
-            getDocs(queryCollection).then(res => setProducts(res.docs.map(item =>({id: item.id, ...item.data()}))))
+            getDocs(queryCollection).then(res => setProducts(res.docs.map(item => ({ id: item.id, ...item.data() }))))
         }
 
-    },[categoryId])
+    }, [categoryId])
 
-  
 
-    
+
+
     return (
-        <>        
-            <h1 className='display-5 pt-3 text-center '>{ greeting }</h1>
+        <>
+            <h1 className='display-5 pt-3 text-center '>{greeting}</h1>
             {products.length > 0 ? (
-            <ItemList items={products} />)
-            :
-            (<LoadingSpinner text={"Cargando tienda..."}/>)
-        }
+                <ItemList items={products} />)
+                :
+                (<LoadingSpinner text={"Cargando tienda..."} />)
+            }
         </>
-)
+    )
 }
 
 export { ItemListContainer } 

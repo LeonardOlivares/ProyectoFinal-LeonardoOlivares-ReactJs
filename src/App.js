@@ -9,25 +9,25 @@ import { ItemDetailContainer } from "./components/ItemDetailContainer";
 
 
 function App() {
-  return ( 
+  return (
     <div className="App">
-        <BrowserRouter>
+      <BrowserRouter>
         <CartProvider>
-        <Routes>
-          <Route path='' element={ <NavBarPrincipal /> }>
-           <Route path='/' element={ <Tienda /> } />
-           <Route path='/detalle/:id' element={ <ItemDetailContainer /> } />
-           <Route path='/categoria' element={ <ItemListContainer /> } />
-           <Route path='/categoria/:categoryId' element={ <ItemListContainer /> } />
-           <Route path='/cart' element={ <Cart/> } />
-           <Route path='/checkout' element={ <Checkout/> } />
-           <Route path='*' element={ <h1>Página no encontrada<br/>Error 404</h1> } />
-          </Route>
-        </Routes>
+          <Routes>
+            <Route path='' element={<NavBarPrincipal />}>
+              <Route path='/' element={<Tienda />} />
+              <Route path='/detalle/:id' element={<ItemDetailContainer />} />
+              <Route path='/categoria' element={<ItemListContainer />} />
+              <Route path='/categoria/:categoryId' element={<ItemListContainer />} />
+              <Route path='/cart' element={<Cart />} />
+              <Route path='/checkout' element={<Checkout />} />
+              <Route path='*' element={<h1>Página no encontrada<br />Error 404</h1>} />
+            </Route>
+          </Routes>
         </CartProvider>
-        </BrowserRouter>
-        
-    </div>   
+      </BrowserRouter>
+
+    </div>
   );
 }
 

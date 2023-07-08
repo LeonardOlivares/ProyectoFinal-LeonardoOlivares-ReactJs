@@ -36,17 +36,12 @@ const Checkout = () => {
         return (
             <div className="container">
                 <h1 className='display-5 pt-3 text-center '>Muchas gracias por tu compra</h1>
-                <p className="text-center">Tu numero de pedido es:<br/> <b>{pedidoId}</b></p>
+                <p className="text-center">Tu numero de pedido es:<br /> <b>{pedidoId}</b></p>
                 <Button className="btn btn-comprarMas w-50" onClick={() => Navigate('/')}>¡Ir a la tienda a comprar más!</Button>
             </div>
 
-
-
         )
     }
-
-
-
 
     return (
         <>
