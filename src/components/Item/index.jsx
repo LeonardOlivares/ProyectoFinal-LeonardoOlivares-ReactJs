@@ -8,9 +8,6 @@ import { Link } from 'react-router-dom'
 
 const Item = ({nombre, id, precio, img, textButton}) =>{
 
-    /* const onAdd = (quantity) => {
-        alert(`Compraste ${quantity} unidades`)
-    } */
     return (
         <Card className="cardItem" style={{ width: '18rem' }}>
         <Card.Img className="itemImg" variant="top" src={img} />

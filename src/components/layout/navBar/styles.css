@@ -1,5 +1,6 @@
 .NavBg{
-    background-color:rgb(98, 7, 24) !important;
+    background: rgb(0,204,255);
+background: linear-gradient(222deg, rgba(0,204,255,1) 0%, rgba(116,45,253,1) 100%);
     color: white !important;
 }
 .logoNav{

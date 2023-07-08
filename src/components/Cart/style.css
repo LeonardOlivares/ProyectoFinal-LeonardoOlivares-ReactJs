@@ -17,9 +17,16 @@
     padding-left: 20px;
     padding-right: 20px;
 }
-.btn-finalizar{
-    background-color: rgb(96, 215, 56)!important;
-    height: 50px!important;
-    align-items: center!important;
-    vertical-align: middle!important;
+
+.btn-gradient{
+    background: rgb(0,204,255);
+background: linear-gradient(222deg, rgba(0,204,255,1) 0%, rgba(116,45,253,1) 100%);
+    color: white !important;
+    margin: 10px;
+}
+.btn-gradient:hover{
+    background: rgb(0,204,255);
+background: linear-gradient(222deg, rgb(33, 187, 225) 0%, rgb(85, 23, 209) 100%);
+    color: white !important;
+    margin: 10px;
 }

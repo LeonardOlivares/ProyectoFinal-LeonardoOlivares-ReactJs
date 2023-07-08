@@ -28,7 +28,7 @@ const ItemListContainer = ({ greeting }) => {
     
     return (
         <>        
-            <h1> { greeting }</h1>
+            <h1 className='display-5 pt-3 text-center '>{ greeting }</h1>
             {products.length > 0 ? (
             <ItemList items={products} />)
             :

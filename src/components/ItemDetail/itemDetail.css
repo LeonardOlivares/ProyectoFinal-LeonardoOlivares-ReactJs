@@ -20,7 +20,18 @@
 
 }
 .titleDetail{
-    color: rgb(138, 20, 42);
+    color: rgba(116,45,253,1);
     font-weight:700;
     font-size: 35px;
 }
+.btn-pagar{
+    background: rgb(0,204,255);
+background: linear-gradient(222deg, rgba(0,204,255,1) 0%, rgba(116,45,253,1) 100%);
+color:white !important;
+}
+.btn-pagar:hover{
+    background: rgb(0,204,255);
+background: linear-gradient(222deg, rgb(1, 167, 208) 0%, rgb(84, 27, 198) 100%);
+color:white !important;
+}
+

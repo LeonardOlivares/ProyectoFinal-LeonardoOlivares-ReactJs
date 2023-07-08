@@ -1,0 +1,13 @@
+.btn-comprarMas{
+    background: rgb(0,204,255);
+background: linear-gradient(222deg, rgba(0,204,255,1) 0%, rgba(116,45,253,1) 100%);
+    color: white !important;
+    margin: 10px;
+}
+.btn-comprarMas:hover{
+    background: rgb(0,204,255);
+background: linear-gradient(222deg, rgb(33, 187, 225) 0%, rgb(85, 23, 209) 100%);
+    color: white !important;
+    margin: 8px;
+    transition: 0.5s;
+}

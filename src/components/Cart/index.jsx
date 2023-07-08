@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
 import 'bootstrap/dist/css/bootstrap.css';
 import './style.css'
 import { CartContext } from '../context';
 import { Button } from 'react-bootstrap';
 import { LoadingSpinner } from '../loadingSpinner';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -13,38 +13,46 @@ const Cart = () => {
   const Navigate = useNavigate()
   const { cartProducts, limpiarCarrito, removeProduct, totalCarrito, formateo } = useContext(CartContext);
 
-  /* const formateo = (precio) => {
-    return new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(precio);
-  };
-
-  const total = cartProducts.reduce((acc, item) => acc + (item.precio * item.quantity), 0); */
-
   const handleClearCart = () => {
     limpiarCarrito();
+    toast.error('Vaciaste el carrito completo', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
   };
 
   const handleRemoveItem = (itemId) => {
     removeProduct(itemId);
+    toast.error('Producto eliminado del carrito', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
   }
   
-
-  
-
-  const handleFinalizeOrder = () => {
-    
-    Swal.fire('Gracias por tu compra')
-  };
 
   
 
   return (
     <div className="flex flex-col min-h-screen">
       <div className="container mx-auto py-8 flex-grow">
+        <ToastContainer/>
         {cartProducts.length === 0 ? (
-            <div className="text-center">
-            <h2>Tu Carrito está vacío!</h2>
-            <p>Agrega productos al carrito para continuar.</p>
-            <Button className="btn btn-cart" onClick={() => Navigate('/')}>Ir a la tienda</Button>
+            <div className="mt-5 text-center">
+            <h2>¡Tu Carrito está vacío &#128532;!</h2>
+            <p>Agrega algún producto de la tienda &#128071;</p>
+            <Button className="btn btn-gradient w-50" onClick={() => Navigate('/')}>Ir a la tienda</Button>
             </div>
         )
             : 
@@ -66,7 +74,7 @@ const Cart = () => {
                         <h6>Sub-Total: {formateo(item.precio * item.quantity)}</h6>
                     </div>
                     <div className='col-sm-2'>
-                        <button className="btn btn-danger" onClick={() => handleRemoveItem(item.id)}>Eliminar del carrito</button>
+                        <button className="btn btn-danger" onClick={() => handleRemoveItem(item.id)}>Eliminar del carrito</button><ToastContainer/>
                     </div>                    
                 </div>
                 <hr />
@@ -74,7 +82,7 @@ const Cart = () => {
             ))}
             <div className="d-flex m-4 justify-content-center">
               <span className="totalCarrito border border-secondary">Total: {formateo(totalCarrito())}</span>              
-              <button className="btn btn-success" onClick={() => Navigate('/checkout')}>Finalizar Compra</button>
+              <button className="btn btn-gradient" onClick={() => Navigate('/checkout')}>Finalizar Compra</button>
             </div>
             <div className="d-flex m-5 justify-content-center">              
               <button className="btn m-3 btn-danger" onClick={handleClearCart}>Vaciar Carrito</button>
