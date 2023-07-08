@@ -1,10 +1,23 @@
-# Getting Started with Create React App
+# VeloPro
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## _Tienda de Ciclismo_
 
-In the project directory, you can run:
+Esta es una aplicación web creada con CreateReactApp
+
+Este proyecto se realizó con el objetivo de cumplir con un proyecto de una cursada de ReactJs pero a su vez para tomarlo como base para crear una tienda de un emprendimiento propio. 
+
+## Debes saber
+
+- Versión de Node utilizada: **v18.13.0**
+- Proyecto vinculado con Firebase, por lo tanto no podrás acceder a los productos la hacer un git clone si no tienes la "ApiKey".
+- Ten en cuenta que si quieres clonar y usar como plantilla la App, debes crear tu propia base de datos y cargarsela a la App, de lo contrario no recibirás ningun dato.
+
+
+## Implementaciones de CreateReactApp
+
+En este proyecto tu puedes correr:
 
 ### `npm start`
 
@@ -39,32 +52,8 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Lee mas documentación
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
